@@ -26,7 +26,7 @@ class Wikipedia(commands.Cog):
         request = " ".join(request)
         error = None
         definition = wikipedia.summary(request, sentences=2, chars=1000, auto_suggest=True, redirect = True)
-        search=discord.Embed(title="Wikipedia Result", description=definition, colour=discord.Colour.red())
+        search=discord.Embed(title="Wikipedia Result", description=definition, colour=discord.Colour.white())
         await ctx.send(content=None, embed=search)
         
 def setup(client):
