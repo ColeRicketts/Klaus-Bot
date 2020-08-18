@@ -3,7 +3,7 @@ import os
 from discord.ext import commands, tasks
 from itertools import cycle
 
-#Assigns client to the command prefix of Bot
+# Assigns client to the command prefix of Bot
 client = commands.Bot(command_prefix='Bot')
 status = cycle(['Idling in the system RAM', 'discordbotmaster.py on VS code', 'slowly reconsidering my life'])
 
@@ -19,14 +19,6 @@ async def load(ctx, extension):
 @tasks.loop(seconds=10)
 async def change_status():
     await client.change_presence(activity=discord.Game(next(status)))
-
-def is_it_me(ctx):
-    return ctx.author.id == 684907811997745186
-
-@client.command()
-@commands.check(is_it_me)
-async def examplecomm(ctx):
-    await ctx.send(f'Hello, I am {ctx.author}')
 
 @client.command()
 async def unload(ctx, extension):
