@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from time import ctime
 import csv
 
 client = commands.Bot(command_prefix='Bot')
@@ -16,15 +17,6 @@ class Moderation(commands.Cog):
     async def on_command_error(self, ctx, error):
         if isinstance(error, commands.CheckFailure):
             await ctx.send('Please ensure you are permitted to use this command!')
-
-    @client.command()
-    @commands.has_permissions(manage_guild=True)
-    async def change_status(self, ctx, change):
-        await client.change_presence(activity=discord.Game(change))
-
-    @change_status.error
-    async def status_error(self, ctx, error):
-        await ctx.send('Please specify the message!')
 
     @client.command()
     @commands.has_permissions(kick_members=True)
@@ -65,16 +57,8 @@ class Moderation(commands.Cog):
     async def unmute(self, ctx, member: discord.Member):
         role = discord.utils.get(member.guild.roles, name='Muted')
         await member.remove_roles(role)
-        embed = discord.Embed(title="User Muted!", description="**{0}** was muted by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
+        embed = discord.Embed(title="User Muted!", description="**{0}** was unmuted by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
         await ctx.send(embed=embed)
-
-    @kick.error
-    @ban.error
-    @unban.error
-    @mute.error
-    @unmute.error
-    async def userSelect_error(self, ctx, error):
-        await ctx.send('Please specify a user!')
 
     @client.command(pass_context=True)
     @commands.has_permissions(manage_channels=True)
@@ -83,38 +67,48 @@ class Moderation(commands.Cog):
         embed = discord.Embed(title="Channel Slowed!", description="**{0}** was slowed by **{1}** !".format(ctx, ctx.message.author, color=0xff00f6))
         await ctx.send(embed=embed)
 
-    @slowmode.error
-    async def slowmode_error(self, ctx, error):
-        await ctx.send('Please specify an amount for the slowmode!')
-
     @client.command()
     @commands.has_permissions(manage_messages=True)
-    async def clear(self, ctx, amount=int):
+    async def clear(self, ctx, amount=1):
+        amount = amount+1
         await ctx.channel.purge(limit=amount)
-
-    @clear.error
-    async def clear_error(self, ctx, error):
-        await ctx.send('Please specify an amount of messages to delete!')
 
     @client.command()
     @commands.has_permissions(kick_members=True)
     async def warn(self, ctx, member: discord.Member):
-        with open('D:\\Windows Folders\\Documents\\Programming and Scripting\\GitHub\\DiscordBot\\warnings.csv') as file:
-            allWarnings = {}
-            warnedUser = 0
-            reader = csv.DictReader(file)
-            for row in reader:
-                warnedUser = row[0]
-                warning = row[1]
-                allWarnings[warnedUser] = warning
-            if str(member.id) in allWarnings:
-                allWarnings[warnedUser] = str(int(allWarnings[warnedUser]) + 1)
-            else:
-                allWarnings[warnedUser] = 1
-        # channel = client.get_channel(id745980487507640342)
-        # Embed = discord.Embed(title="User Warned!", description="**{0}** was warned by **{1}** ! They now have **{2}** warnings!".format(member, ctx.message.author, allWarnings[warnedUser], color=0xff00f6))
-        await channel.send("Hello")
-        # await client.send.send(discord.Object(id='745980487507640342'), 'hello')
+        allWarnings = 0
+        with open ("D:\Windows Folders\Documents\Programming and Scripting\GitHub\DiscordBot\warnings.csv", "r") as file:
+            filereader = csv.reader(file)
+            for row in filereader:
+                for field in row:
+                    if field == member:
+                        allWarnings = int(row[1])
+                        username = str(row[0])
+                        print(username)
+                        print(allWarnings)
+
+        channel = self.client.get_channel(745980487507640342)
+        embed = discord.Embed(title="User Warned!", description="**{0}** was warned by **{1}** ! They now have **{2}** warnings!".format(member, ctx.message.author, allWarnings, color=0xff00f6))
+        await channel.send(embed=embed)
+
+    @client.command()
+    @commands.has_permissions(kick_members=True)
+    async def report(self, ctx, member: discord.Member, reason):
+        channel = self.client.get_channel(746090781961617462)
+        embed = discord.Embed(title="Report Submitted!", description="**{0}** was reported by **{1}** at **{2}** for **{3}**".format(member, ctx.message.author, ctime(), reason, color=0xff00f6))
+        await channel.send(embed=embed)
+
+    @client.command()
+    @commands.has_permissions(manage_roles=True)
+    async def addrole(self, ctx, member: discord.Member, choice):
+        role = discord.utils.get(member.guild.roles, name=choice)
+        await member.add_roles(role)
+
+    @client.command()
+    @commands.has_permissions(manage_roles=True)
+    async def remrole(self, ctx, member: discord.Member, choice):
+        role = discord.utils.get(member.guild.roles, name=choice)
+        await member.remove_roles(role)
 
 
 def setup(client):
