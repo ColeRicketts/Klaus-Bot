@@ -2,10 +2,10 @@
   "server_details": [
     {
       "bot_token": "NjkyMDEwNDY4NzEzNDMxMDUw.XnoS-A.KCL0m2gsOpFE1f7Ud4oYIbD-sRY",
-      "guild_id": " ",
-      "warnings_id": " ",
-      "reports_id": " ",
-      "automod_id": " "
+      "guild_id": "689899375123759107",
+      "warnings_id": "756593069561872484",
+      "reports_id": "756593105502732350",
+      "automod_id": "756593125346115706"
     }
   ]
 }

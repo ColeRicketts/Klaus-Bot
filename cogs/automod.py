@@ -1,8 +1,14 @@
 import discord
 from discord.ext import commands
 import sqlite3
-
+import json
 client = commands.Bot(command_prefix='!')
+
+with open('config.json') as configFile:
+    data = json.load(configFile)
+    for value in data["server_details"]:
+        automod_id = value['automod_id']
+
 
 class Automod(commands.Cog):
     def __init__(self, client):
@@ -12,16 +18,6 @@ class Automod(commands.Cog):
     @client.event
     async def on_ready(self):
         print('Automod Online!')
-
-    @commands.Cog.listener()
-    @client.event
-    async def on_command_error(self, ctx, error):
-        if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send('Ensure to give all required arguments. Type !help <commandname> to see the requirements!')
-        if isinstance(error, commands.MissingPermissions):
-            await ctx.send('Ensure you have permission for this!')
-        if isinstance(error, commands.CommandNotFound):
-            await ctx.send("This command doesn't exist!")
 
     # Maybe use list from http://www.bannedwordlist.com/
     @commands.Cog.listener()
@@ -37,7 +33,7 @@ class Automod(commands.Cog):
                 else:
                     await message.channel.purge(limit=1)
                     await message.channel.send("Your message has been removed for: Censoring.")
-                    channel = self.client.get_channel(747016781238894672)
+                    channel = self.client.get_channel(int(automod_id))
                     embed = discord.Embed(title="Automod!", description="**{0}** was reported by automod for language! ORIGINAL MESSAGE: **{1}**".format(message.author, message.content, color=0xff00f6))
                     await channel.send(embed=embed)
 

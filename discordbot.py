@@ -17,7 +17,7 @@ async def on_ready():
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send('Ensure to give all required arguments. Type !help <commandname> to see the requirements!')
+        await ctx.send('Ensure to give all required arguments. Type !help <commandName> to see the requirements!')
     if isinstance(error, commands.MissingPermissions):
         await ctx.send('Ensure you have permission for this!')
     if isinstance(error, commands.CommandNotFound):
@@ -26,17 +26,17 @@ async def on_command_error(ctx, error):
 
 @client.command()
 @commands.has_permissions()
-async def load(ctx, extension):
+async def load(extension):
     client.load_extension(f'cogs.{extension}')
 
 
 @client.command()
-async def unload(ctx, extension):
+async def unload(extension):
     client.unload_extension(f'cogs.{extension}')
 
 
 @client.command()
-async def reload(ctx, extension):
+async def reload(extension):
     client.unload_extension(f'cogs.{extension}')
     client.load_extension(f'cogs.{extension}')
 

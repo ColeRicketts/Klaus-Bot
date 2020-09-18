@@ -13,15 +13,6 @@ class Moderation(commands.Cog):
     async def on_ready(self):
         print('Moderation Online!')
 
-    @commands.Cog.listener()
-    @client.event
-    async def on_command_error(self, ctx, error):
-        if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send('Ensure to give all required arguments. Type !help <commandname> to see the requirements!')
-        if isinstance(error, commands.MissingPermissions):
-            await ctx.send('Ensure you have permission for this!')
-        if isinstance(error, commands.CommandNotFound):
-            await ctx.send("This command doesn't exist!")
 
     @client.command()
     @commands.has_permissions(kick_members=True)
