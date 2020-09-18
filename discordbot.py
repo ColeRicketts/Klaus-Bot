@@ -1,11 +1,18 @@
 import os
+import json
 from discord.ext import commands
 client = commands.Bot(command_prefix='!')
+
+with open('config.json') as configFile:
+    data = json.load(configFile)
+    for value in data["server_details"]:
+        bot_token = value['bot_token']
 
 
 @client.event
 async def on_ready():
     print('Bot is ready (client)')
+
 
 @client.event
 async def on_command_error(ctx, error):
@@ -15,6 +22,7 @@ async def on_command_error(ctx, error):
         await ctx.send('Ensure you have permission for this!')
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("This command doesn't exist!")
+
 
 @client.command()
 @commands.has_permissions()
@@ -37,4 +45,4 @@ for filename in os.listdir('./cogs'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
 
-client.run('NjkyMDEwNDY4NzEzNDMxMDUw.XnoS-A.KCL0m2gsOpFE1f7Ud4oYIbD-sRY')
+client.run(bot_token)
