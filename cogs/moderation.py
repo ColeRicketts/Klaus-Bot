@@ -1,9 +1,9 @@
 import discord
 from discord.ext import commands
 from time import ctime
-import csv
+import sqlite3
 
-client = commands.Bot(command_prefix='Bot')
+client = commands.Bot(command_prefix='!')
 
 class Moderation(commands.Cog):
     def __init__(self, client):
@@ -13,24 +13,30 @@ class Moderation(commands.Cog):
     async def on_ready(self):
         print('Moderation Online!')
 
+    @commands.Cog.listener()
     @client.event
     async def on_command_error(self, ctx, error):
-        if isinstance(error, commands.CheckFailure):
-            await ctx.send('Please ensure you are permitted to use this command!')
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send('Ensure to give all required arguments. Type !help <commandname> to see the requirements!')
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.send('Ensure you have permission for this!')
+        if isinstance(error, commands.CommandNotFound):
+            await ctx.send("This command doesn't exist!")
 
     @client.command()
     @commands.has_permissions(kick_members=True)
-    async def kick(self, ctx, member : discord.Member, *, reason=None):
+    async def kick(self, ctx, member: discord.Member, *, reason=None):
         await member.kick(reason=reason)
         embed = discord.Embed(title="User Kicked!", description="**{0}** was kicked by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
         await ctx.send(embed=embed)
     
     @client.command()
     @commands.has_permissions(ban_members=True)
-    async def ban(self, ctx, member : discord.Member, *, reason=None):
+    async def ban(self, ctx, member: discord.Member, *, reason=None):
         await member.ban(reason=reason)
         embed = discord.Embed(title="User Banned!", description="**{0}** was banned by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
         await ctx.send(embed=embed)
+
 
     @client.command()
     @commands.has_permissions(ban_members=True)
@@ -60,6 +66,7 @@ class Moderation(commands.Cog):
         embed = discord.Embed(title="User Muted!", description="**{0}** was unmuted by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
         await ctx.send(embed=embed)
 
+
     @client.command(pass_context=True)
     @commands.has_permissions(manage_channels=True)
     async def slowmode(self, ctx, amount):
@@ -76,20 +83,50 @@ class Moderation(commands.Cog):
     @client.command()
     @commands.has_permissions(kick_members=True)
     async def warn(self, ctx, member: discord.Member):
-        allWarnings = 0
-        with open ("D:\Windows Folders\Documents\Programming and Scripting\GitHub\DiscordBot\warnings.csv", "r") as file:
-            filereader = csv.reader(file)
-            for row in filereader:
-                for field in row:
-                    if field == member:
-                        allWarnings = int(row[1])
-                        username = str(row[0])
-                        print(username)
-                        print(allWarnings)
-
+        allWarnings = 1
+        dbconnect = sqlite3.connect('users.db')
+        cursor = dbconnect.cursor()
+        records = cursor.execute("SELECT username, warnings FROM warnings WHERE username = ?", [str(member)]).fetchall()
+        for row in records:
+            allWarnings = row[1] + 1
+        cursor.execute("SELECT username, warnings FROM warnings WHERE username = ?", [str(member)])
+        result = cursor.fetchone()
+        if result:
+            cursor.execute("UPDATE warnings SET warnings = ? WHERE username = ?", [allWarnings, str(member)])
+        else:
+            cursor.execute('''INSERT INTO warnings(username, warnings) VALUES(?,?)''', (str(member), allWarnings))
+        dbconnect.commit()
+        dbconnect.close()
         channel = self.client.get_channel(745980487507640342)
         embed = discord.Embed(title="User Warned!", description="**{0}** was warned by **{1}** ! They now have **{2}** warnings!".format(member, ctx.message.author, allWarnings, color=0xff00f6))
         await channel.send(embed=embed)
+
+    @client.command()
+    @commands.has_permissions(kick_members=True)
+    async def warnings(self, ctx, member: discord.Member):
+        allWarnings = 0
+        dbconnect = sqlite3.connect('users.db')
+        cursor = dbconnect.cursor()
+        records = cursor.execute("SELECT username, warnings FROM warnings WHERE username = ?", [str(member)]).fetchall()
+        for row in records:
+            allWarnings = row[1]
+        dbconnect.close()
+        await ctx.send("The user has **{0}** warnings in total".format(allWarnings))
+
+    @client.command()
+    @commands.has_permissions(kick_members=True)
+    async def clearwarnings(self, ctx, member: discord.Member):
+        dbconnect = sqlite3.connect('users.db')
+        cursor = dbconnect.cursor()
+        cursor.execute("SELECT username, warnings FROM warnings WHERE username = ?", [str(member)])
+        result = cursor.fetchone()
+        if result:
+            cursor.execute("DELETE FROM warnings WHERE username = ?", [str(member)])
+            await ctx.send("Warnings Cleared!")
+        else:
+            await ctx.send("User already has no warnings!")
+        dbconnect.commit()
+        dbconnect.close()
 
     @client.command()
     @commands.has_permissions(kick_members=True)

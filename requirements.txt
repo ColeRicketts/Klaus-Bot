@@ -1,3 +1,5 @@
 git+https://github.com/Rapptz/discord.py
 git+https://github.com/goldsmith/Wikipedia
+git+https://github.com/joetats/youtube_search
+https://github.com/PythonistaGuild/Wavelink
 discord~=1.0.1

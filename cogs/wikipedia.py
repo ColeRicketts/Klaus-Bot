@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import wikipedia
 
-client = commands.Bot(command_prefix='Bot')
+client = commands.Bot(command_prefix='!')
 
 class Wikipedia(commands.Cog):
     def __init__(self, client):
@@ -11,13 +11,17 @@ class Wikipedia(commands.Cog):
     @commands.Cog.listener()
     @client.event
     async def on_ready(self):
-        print("Wiki online!")  
-       
-    def wiki_summary(self, request):
-        print("Function called")
-        definition = wikipedia.summary(request, sentences=2, chars=1000, auto_suggest=True, redirect = True)
-        print("stuck")
-        return definition
+        print("Wiki online!")
+
+    @commands.Cog.listener()
+    @client.event
+    async def on_command_error(self, ctx, error):
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send('Ensure to give all required arguments. Type !help <commandname> to see the requirements!')
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.send('Ensure you have permission for this!')
+        if isinstance(error, commands.CommandNotFound):
+            await ctx.send("This command doesn't exist!")
 
     @client.command()
     async def define(self, ctx):

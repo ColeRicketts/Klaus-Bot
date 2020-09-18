@@ -1,18 +1,31 @@
 import os
 from discord.ext import commands
-client = commands.Bot(command_prefix='Bot')
+client = commands.Bot(command_prefix='!')
+
 
 @client.event
 async def on_ready():
     print('Bot is ready (client)')
 
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send('Ensure to give all required arguments. Type !help <commandname> to see the requirements!')
+    if isinstance(error, commands.MissingPermissions):
+        await ctx.send('Ensure you have permission for this!')
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.send("This command doesn't exist!")
+
 @client.command()
+@commands.has_permissions()
 async def load(ctx, extension):
     client.load_extension(f'cogs.{extension}')
+
 
 @client.command()
 async def unload(ctx, extension):
     client.unload_extension(f'cogs.{extension}')
+
 
 @client.command()
 async def reload(ctx, extension):
