@@ -10,6 +10,7 @@ with open('config.json') as configFile:
     for value in data["server_details"]:
         warn_id = value['warnings_id']
         report_id = value['reports_id']
+        mod_id = value['modaction_id']
 
 
 class Moderation(commands.Cog):
@@ -25,15 +26,27 @@ class Moderation(commands.Cog):
     @commands.has_permissions(kick_members=True)
     async def kick(self, ctx, member: discord.Member, *, reason=None):
         await member.kick(reason=reason)
-        embed = discord.Embed(title="User Kicked!", description="**{0}** was kicked by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
-        await ctx.send(embed=embed)
+        channel = self.client.get_channel(int(mod_id))
+        embedVar = discord.Embed(title="USER KICKED", description="Issued by **{0}**".format(ctx.message.author), color=0x1abc9c)
+        embedVar.add_field(name="User:", value="**{0}**".format(member.mention), inline=True)
+        embedVar.add_field(name="Channel:", value="**{0}**".format(ctx.channel.mention), inline=True)
+        embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
+        embedVar.add_field(name="Reason:", value="**{0}**".format(reason), inline=True)
+        await channel.send(embed=embedVar)
+        await ctx.send("User Kicked!")
     
     @client.command()
     @commands.has_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member, *, reason=None):
         await member.ban(reason=reason)
-        embed = discord.Embed(title="User Banned!", description="**{0}** was banned by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
-        await ctx.send(embed=embed)
+        channel = self.client.get_channel(int(mod_id))
+        embedVar = discord.Embed(title="USER BANNED", description="Issued by **{0}**".format(ctx.message.author), color=0x3498db)
+        embedVar.add_field(name="User:", value="**{0}**".format(member.mention), inline=True)
+        embedVar.add_field(name="Channel:", value="**{0}**".format(ctx.channel.mention), inline=True)
+        embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
+        embedVar.add_field(name="Reason:", value="**{0}**".format(reason), inline=True)
+        await channel.send(embed=embedVar)
+        await ctx.send("User Banned!")
 
 
     @client.command()
@@ -45,21 +58,51 @@ class Moderation(commands.Cog):
             user = ban_entry.user
             if (user.name, user.discriminator) == (member_name, member_discriminator):
                 await ctx.guild.unban(user)
-                embed = discord.Embed(title="User Unbanned!", description="**{0}** was unbanned by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
-                await ctx.send(embed=embed)
+                channel = self.client.get_channel(int(mod_id))
+                embedVar = discord.Embed(title="USER UNBANNED", description="Issued by **{0}**".format(ctx.message.author), color=0x3498db)
+                embedVar.add_field(name="User:", value="**{0}**".format(member.mention), inline=True)
+                embedVar.add_field(name="Channel:", value="**{0}**".format(ctx.channel.mention), inline=True)
+                embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
+                await channel.send(embed=embedVar)
+                await ctx.send("User Unbanned!")
 
     @client.command(pass_context=True)
     @commands.has_permissions(manage_channels=True)
     async def slowmode(self, ctx, amount):
         await ctx.channel.edit(slowmode_delay=int(amount))
-        embed = discord.Embed(title="Channel Slowed!", description="**{0}** was slowed by **{1}** !".format(ctx.channel, ctx.message.author, color=0xff00f6))
+        embed = discord.Embed(title="Channel Slowed!", description="**{0}** was slowed by **{1}** for **{2}**s!".format(ctx.channel, ctx.message.author, int(amount), color=0x2ecc71))
         await ctx.send(embed=embed)
+        channel = self.client.get_channel(int(mod_id))
+        embedVar = discord.Embed(title="SLOWMODE ACTIVE", description="Issued by **{0}**".format(ctx.message.author), color=0x2ecc71)
+        embedVar.add_field(name="Channel:", value="**{0}**".format(ctx.channel.mention), inline=True)
+        embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
+        embedVar.add_field(name="Amount:", value="**{0}**s".format(int(amount)), inline=True)
+        await channel.send(embed=embedVar)
+
+    @client.command(pass_context=True)
+    @commands.has_permissions(manage_channels=True)
+    async def unslow(self, ctx):
+        await ctx.channel.edit(slowmode_delay=0)
+        embed = discord.Embed(title="Channel Unslowed!", description="**{0}** was unslowed by **{1}** !".format(ctx.channel, ctx.message.author, color=0x2ecc71))
+        await ctx.send(embed=embed)
+        channel = self.client.get_channel(int(mod_id))
+        embedVar = discord.Embed(title="SLOWMODE REMOVED", description="Issued by **{0}**".format(ctx.message.author), color=0x2ecc71)
+        embedVar.add_field(name="Channel:", value="**{0}**".format(ctx.channel.mention), inline=True)
+        embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
+        await channel.send(embed=embedVar)
 
     @client.command()
     @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx, amount=1):
         amount = amount+1
         await ctx.channel.purge(limit=amount)
+        channel = self.client.get_channel(int(mod_id))
+        embedVar = discord.Embed(title="MESSAGES CLEARED", description="Issued by **{0}**".format(ctx.message.author), color=0x2ecc71)
+        embedVar.add_field(name="Channel:", value="**{0}**".format(ctx.channel.mention), inline=True)
+        embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
+        embedVar.add_field(name="No. Cleared:", value="**{0}**".format(amount), inline=True)
+        await channel.send(embed=embedVar)
+        await ctx.send("Messages cleared!")
 
     @client.command()
     @commands.has_permissions(kick_members=True)
@@ -79,8 +122,12 @@ class Moderation(commands.Cog):
         dbconnect.commit()
         dbconnect.close()
         channel = self.client.get_channel(int(warn_id))
-        embed = discord.Embed(title="User Warned!", description="**{0}** was warned by **{1}** ! They now have **{2}** warnings!".format(member, ctx.message.author, allWarnings, color=1752220))
-        await channel.send(embed=embed)
+        embedVar = discord.Embed(title="MOD WARNING", description="Issued by **{0}**".format(ctx.message.author), color=0xe67e22)
+        embedVar.add_field(name="User:", value="**{0}**".format(member.mention), inline=True)
+        embedVar.add_field(name="Channel:", value="**{0}**".format(ctx.channel.mention), inline=True)
+        embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
+        embedVar.add_field(name="Total:", value="**{0}** Warnings".format(allWarnings), inline=True)
+        await channel.send(embed=embedVar)
 
     @client.command()
     @commands.has_permissions(kick_members=True)
@@ -103,6 +150,12 @@ class Moderation(commands.Cog):
         result = cursor.fetchone()
         if result:
             cursor.execute("DELETE FROM warnings WHERE username = ?", [str(member)])
+            channel = self.client.get_channel(int(mod_id))
+            embedVar = discord.Embed(title="WARNINGS CLEARED", description="Issued by **{0}**".format(ctx.message.author), color=0xe67e22)
+            embedVar.add_field(name="User:", value="**{0}**".format(member.mention), inline=True)
+            embedVar.add_field(name="Channel:", value="**{0}**".format(ctx.channel.mention), inline=True)
+            embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
+            await channel.send(embed=embedVar)
             await ctx.send("Warnings Cleared!")
         else:
             await ctx.send("User already has no warnings!")
@@ -112,8 +165,13 @@ class Moderation(commands.Cog):
     @client.command()
     async def report(self, ctx, member: discord.Member, reason):
         channel = self.client.get_channel(int(report_id))
-        embed = discord.Embed(title="Report Submitted!", description="**{0}** was reported by **{1}** at **{2}** for **{3}** in channel **{4}**".format(member, ctx.message.author, ctime(), reason, ctx.channel, color=CDC311))
-        await channel.send(embed=embed)
+        embedVar = discord.Embed(title="USER REPORTED", description="Issued by **{0}**".format(ctx.message.author), color=0xe67e22)
+        embedVar.add_field(name="User:", value="**{0}**".format(member.mention), inline=True)
+        embedVar.add_field(name="Channel:", value="**{0}**".format(ctx.channel.mention), inline=True)
+        embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
+        embedVar.add_field(name="Reason:", value="**{0}**".format(reason), inline=True)
+        await channel.send(embed=embedVar)
+        await ctx.send("Reported to moderators!")
 
 
 def setup(client):

@@ -8,7 +8,11 @@ class Moderation(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print('Automod Online!')
+        print('Announcement Online!')
+
+   # @client.command()
+   # @commands.has_permissions(manage_server= True)
+   # async def announce
 
 def setup(client):
     client.add_cog(Moderation(client))

@@ -8,7 +8,7 @@ class Moderation(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print('Automod Online!')
+        print('Levelling Online!')
 
 def setup(client):
     client.add_cog(Moderation(client))
