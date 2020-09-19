@@ -34,7 +34,7 @@ class Automod(commands.Cog):
                     await message.channel.purge(limit=1)
                     await message.channel.send("Your message has been removed for: Censoring.")
                     channel = self.client.get_channel(int(automod_id))
-                    embed = discord.Embed(title="Automod!", description="**{0}** was reported by automod for language! ORIGINAL MESSAGE: **{1}**".format(message.author, message.content, color=0xff00f6))
+                    embed = discord.Embed(title="Automod!", description="**{0}** was reported by automod for language! ORIGINAL MESSAGE: **{1}**".format(message.author, message.content, color=15158332))
                     await channel.send(embed=embed)
 
     @client.command()

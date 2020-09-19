@@ -2,8 +2,15 @@ import discord
 from discord.ext import commands
 from time import ctime
 import sqlite3
-
+import json
 client = commands.Bot(command_prefix='!')
+
+with open('config.json') as configFile:
+    data = json.load(configFile)
+    for value in data["server_details"]:
+        warn_id = value['warnings_id']
+        report_id = value['reports_id']
+
 
 class Moderation(commands.Cog):
     def __init__(self, client):
@@ -42,27 +49,10 @@ class Moderation(commands.Cog):
                 await ctx.send(embed=embed)
 
     @client.command(pass_context=True)
-    @commands.has_permissions(manage_roles=True)
-    async def mute(self, ctx, member: discord.Member):
-        role = discord.utils.get(member.guild.roles, name='Muted')
-        await member.add_roles(role)
-        embed = discord.Embed(title="User Muted!", description="**{0}** was muted by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
-        await ctx.send(embed=embed)
-
-    @client.command(pass_context=True)
-    @commands.has_permissions(manage_roles=True)
-    async def unmute(self, ctx, member: discord.Member):
-        role = discord.utils.get(member.guild.roles, name='Muted')
-        await member.remove_roles(role)
-        embed = discord.Embed(title="User Muted!", description="**{0}** was unmuted by **{1}**!".format(member, ctx.message.author), color=0xff00f6)
-        await ctx.send(embed=embed)
-
-
-    @client.command(pass_context=True)
     @commands.has_permissions(manage_channels=True)
     async def slowmode(self, ctx, amount):
         await ctx.channel.edit(slowmode_delay=int(amount))
-        embed = discord.Embed(title="Channel Slowed!", description="**{0}** was slowed by **{1}** !".format(ctx, ctx.message.author, color=0xff00f6))
+        embed = discord.Embed(title="Channel Slowed!", description="**{0}** was slowed by **{1}** !".format(ctx.channel, ctx.message.author, color=0xff00f6))
         await ctx.send(embed=embed)
 
     @client.command()
@@ -88,8 +78,8 @@ class Moderation(commands.Cog):
             cursor.execute('''INSERT INTO warnings(username, warnings) VALUES(?,?)''', (str(member), allWarnings))
         dbconnect.commit()
         dbconnect.close()
-        channel = self.client.get_channel(745980487507640342)
-        embed = discord.Embed(title="User Warned!", description="**{0}** was warned by **{1}** ! They now have **{2}** warnings!".format(member, ctx.message.author, allWarnings, color=0xff00f6))
+        channel = self.client.get_channel(int(warn_id))
+        embed = discord.Embed(title="User Warned!", description="**{0}** was warned by **{1}** ! They now have **{2}** warnings!".format(member, ctx.message.author, allWarnings, color=1752220))
         await channel.send(embed=embed)
 
     @client.command()
@@ -120,23 +110,10 @@ class Moderation(commands.Cog):
         dbconnect.close()
 
     @client.command()
-    @commands.has_permissions(kick_members=True)
     async def report(self, ctx, member: discord.Member, reason):
-        channel = self.client.get_channel(746090781961617462)
-        embed = discord.Embed(title="Report Submitted!", description="**{0}** was reported by **{1}** at **{2}** for **{3}**".format(member, ctx.message.author, ctime(), reason, color=0xff00f6))
+        channel = self.client.get_channel(int(report_id))
+        embed = discord.Embed(title="Report Submitted!", description="**{0}** was reported by **{1}** at **{2}** for **{3}** in channel **{4}**".format(member, ctx.message.author, ctime(), reason, ctx.channel, color=CDC311))
         await channel.send(embed=embed)
-
-    @client.command()
-    @commands.has_permissions(manage_roles=True)
-    async def addrole(self, ctx, member: discord.Member, choice):
-        role = discord.utils.get(member.guild.roles, name=choice)
-        await member.add_roles(role)
-
-    @client.command()
-    @commands.has_permissions(manage_roles=True)
-    async def remrole(self, ctx, member: discord.Member, choice):
-        role = discord.utils.get(member.guild.roles, name=choice)
-        await member.remove_roles(role)
 
 
 def setup(client):
