@@ -27,4 +27,3 @@ Coming Soon, I will work to integrate voice functionality into the bot like play
 Once the bot is done, I'll post an installation guide here!
 
    [discord.py]: <https://github.com/Rapptz/discord.py>
-   [goldsmith]: <https://github.com/goldsmith/Wikipedia>
