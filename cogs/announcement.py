@@ -46,9 +46,10 @@ class Moderation(commands.Cog):
 
     @client.command()
     @commands.has_permissions(manage_channels=True)
-    async def everyoneannounce(self, ctx):
-        channel = self.client.get_channel(int(announce_id))
+    async def previewannounce(self, ctx):
         embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage), colour=0xe91e63)
+        await ctx.send(embed=embedVar)
+
 
 def setup(client):
     client.add_cog(Moderation(client))

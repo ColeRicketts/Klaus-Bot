@@ -25,14 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="Updated moderation to effectively pass messages to moderation channels, removed wikipedia.py due to issue with not finding correct search results for it.">
+    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="Added new announcement.py cog, which allows people to prepare an announcement and then send it.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/announcement.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/announcement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/discordbot.py" beforeDir="false" afterPath="$PROJECT_DIR$/discordbot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colourCodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/colourCodes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voice.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/voice.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600518931759</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added new announcement.py cog, which allows people to prepare an announcement and then send it.">
+      <created>1600588714390</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1600588714390</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -231,7 +233,8 @@
     <MESSAGE value="Updated automod to be able to use JSON values for compatability between other servers." />
     <MESSAGE value="testing webhook" />
     <MESSAGE value="Updated moderation to effectively pass messages to moderation channels, removed wikipedia.py due to issue with not finding correct search results for it." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated moderation to effectively pass messages to moderation channels, removed wikipedia.py due to issue with not finding correct search results for it." />
+    <MESSAGE value="Added new announcement.py cog, which allows people to prepare an announcement and then send it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new announcement.py cog, which allows people to prepare an announcement and then send it." />
   </component>
   <component name="WindowStateProjectService">
     <state x="698" y="344" key="#Notifications" timestamp="1598005062009">
@@ -250,25 +253,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600368336301" />
-    <state width="1899" height="221" key="GridCell.Tab.0.bottom" timestamp="1600550470487">
+    <state width="1899" height="221" key="GridCell.Tab.0.bottom" timestamp="1600589165536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600550470487" />
+    <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600589165536" />
     <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.center" timestamp="1600550470486">
+    <state width="1899" height="221" key="GridCell.Tab.0.center" timestamp="1600589165535">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600550470486" />
+    <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600589165535" />
     <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.left" timestamp="1600550470486">
+    <state width="1899" height="221" key="GridCell.Tab.0.left" timestamp="1600589165535">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600550470486" />
+    <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600589165535" />
     <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.right" timestamp="1600550470487">
+    <state width="1899" height="221" key="GridCell.Tab.0.right" timestamp="1600589165536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600550470487" />
+    <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600589165536" />
     <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1600501823199">
       <screen x="0" y="0" width="1920" height="1040" />
