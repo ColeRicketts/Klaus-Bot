@@ -25,10 +25,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="Added new announcement.py cog, which allows people to prepare an announcement and then send it.">
+    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="New poll.py cog, allowing for quick strawpolls to be made on the fly, with full reaction arrays included.">
+      <change afterPath="$PROJECT_DIR$/Screenshot 2020-09-20 164647.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/announcement.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/announcement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/poll.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/poll.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colourCodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/colourCodes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600589356660</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="New poll.py cog, allowing for quick strawpolls to be made on the fly, with full reaction arrays included.">
+      <created>1600609816835</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1600609816835</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -243,9 +252,14 @@
     <MESSAGE value="testing webhook" />
     <MESSAGE value="Updated moderation to effectively pass messages to moderation channels, removed wikipedia.py due to issue with not finding correct search results for it." />
     <MESSAGE value="Added new announcement.py cog, which allows people to prepare an announcement and then send it." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new announcement.py cog, which allows people to prepare an announcement and then send it." />
+    <MESSAGE value="New poll.py cog, allowing for quick strawpolls to be made on the fly, with full reaction arrays included." />
+    <option name="LAST_COMMIT_MESSAGE" value="New poll.py cog, allowing for quick strawpolls to be made on the fly, with full reaction arrays included." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="586" y="198" key="#Inspections" timestamp="1600620734149">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="586" y="198" key="#Inspections/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600620734149" />
     <state x="698" y="344" key="#Notifications" timestamp="1598005062009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -262,25 +276,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600368336301" />
-    <state width="1899" height="221" key="GridCell.Tab.0.bottom" timestamp="1600609392608">
+    <state width="1899" height="221" key="GridCell.Tab.0.bottom" timestamp="1600625464113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600609392608" />
+    <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600625464113" />
     <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.center" timestamp="1600609392608">
+    <state width="1899" height="221" key="GridCell.Tab.0.center" timestamp="1600625464113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600609392608" />
+    <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600625464113" />
     <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.left" timestamp="1600609392608">
+    <state width="1899" height="221" key="GridCell.Tab.0.left" timestamp="1600625464113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600609392608" />
+    <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600625464113" />
     <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.right" timestamp="1600609392608">
+    <state width="1899" height="221" key="GridCell.Tab.0.right" timestamp="1600625464113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600609392608" />
+    <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600625464113" />
     <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1600501823199">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -302,10 +316,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598096569019" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600589445845">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600609820106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600589445845" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600609820106" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600412061213" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600450069784">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -315,10 +329,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1912" y="-8" width="1590" height="717" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600458780182" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598086738316">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600612842143">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598086738316" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600612842143" />
     <state x="682" y="432" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1597762873706">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

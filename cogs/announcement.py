@@ -8,7 +8,7 @@ with open('config.json') as configFile:
     for value in data["server_details"]:
         announce_id = value['announcements_id']
 
-class Moderation(commands.Cog):
+class Announcement(commands.Cog):
     def __init__(self, client):
         self.client = client
 
@@ -52,4 +52,4 @@ class Moderation(commands.Cog):
 
 
 def setup(client):
-    client.add_cog(Moderation(client))
+    client.add_cog(Announcement(client))
