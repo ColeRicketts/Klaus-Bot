@@ -594,7 +594,7 @@ class Poll(commands.Cog):
                             winningValue = alphabetReactions[i]
                             await ctx.send(
                                 "POLL RESULTS ARE IN: The most popular result for the rating of **{0}** was **{1}** with **{2}** votes".format(
-                                    pollMessage[i+1], winningValue, winningVote))
+                                    pollMessage[0], pollMessage[i+1], winningVote))
 
             else:
                 ctx.send("Poll is Inactive!")
