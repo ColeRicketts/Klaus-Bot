@@ -12,6 +12,7 @@ with open('config.json') as configFile:
 
 tochange = False
 validID = False
+ticker=0
 alphabetReactions = ["🇦", "🇧", "🇨", "🇩", "🇪", "🇫", "🇬", "🇭", "🇮", "🇯", "🇰", "🇱", "🇲", "🇳", "🇴", "🇵", "🇶", "🇷", "🇸", "🇹", "🇺", "🇻", "🇼", "🇽", "🇾", "🇿"]
 
 class Poll(commands.Cog):
@@ -39,128 +40,203 @@ class Poll(commands.Cog):
                         if payload.emoji.name == '🇦':
                             initalTotal = cursor.execute("SELECT message_id, option1 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option1 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇧':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option1 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇧':
                             initalTotal = cursor.execute("SELECT message_id, option2 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option2 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇨':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option2 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇨':
                             initalTotal = cursor.execute("SELECT message_id, option3 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option3 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇩':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option3 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇩':
                             initalTotal = cursor.execute("SELECT message_id, option4 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option4 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇪':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option4 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇪':
                             initalTotal = cursor.execute("SELECT message_id, option5 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option5 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇫':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option5 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇫':
                             initalTotal = cursor.execute("SELECT message_id, option6 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option6 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇬':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option6 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇬':
                             initalTotal = cursor.execute("SELECT message_id, option7 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option7 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇭':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option7 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇭':
                             initalTotal = cursor.execute("SELECT message_id, option8 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option8 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇮':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option8 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇮':
                             initalTotal = cursor.execute("SELECT message_id, option9 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option9 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇯':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option9 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇯':
                             initalTotal = cursor.execute("SELECT message_id, option10 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option10 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇰':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option10 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇰':
                             initalTotal = cursor.execute("SELECT message_id, option11 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option11 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇱':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option11 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇱':
                             initalTotal = cursor.execute("SELECT message_id, option12 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option12 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇲':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option12 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇲':
                             initalTotal = cursor.execute("SELECT message_id, option13 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option13 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇳':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option13 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇳':
                             initalTotal = cursor.execute("SELECT message_id, option14 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option14 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇴':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option14 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇴':
                             initalTotal = cursor.execute("SELECT message_id, option15 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option15 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇵':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option15 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇵':
                             initalTotal = cursor.execute("SELECT message_id, option16 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option16 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇶':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option16 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇶':
                             initalTotal = cursor.execute("SELECT message_id, option17 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option17 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇷':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option17 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇷':
                             initalTotal = cursor.execute("SELECT message_id, option18 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option18 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇸':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option18 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇸':
                             initalTotal = cursor.execute("SELECT message_id, option19 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option19 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇹':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option19 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇹':
                             initalTotal = cursor.execute("SELECT message_id, option20 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option20 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇺':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option20 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇺':
                             initalTotal = cursor.execute("SELECT message_id, option21 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option21 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇻':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option21 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇻':
                             initalTotal = cursor.execute("SELECT message_id, option22 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option22 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇼':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option22 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇼':
                             initalTotal = cursor.execute("SELECT message_id, option23 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option23 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇽':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option23 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇽':
                             initalTotal = cursor.execute("SELECT message_id, option24 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option24 = ? WHERE message_id = ?", [total, message_id])
-                        elif payload.emoji.name == '🇾':
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option24 = ? WHERE message_id = ?", [0, message_id])
+                        if payload.emoji.name == '🇾':
                             initalTotal = cursor.execute("SELECT message_id, option25 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
+                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option25 = ? WHERE message_id = ?", [total, message_id])
+                        else:
+                            cursor.execute("UPDATE pollscreated SET option25 = ? WHERE message_id = ?", [0, message_id])
             dbconnect.commit()
             dbconnect.close()
 
@@ -421,7 +497,7 @@ class Poll(commands.Cog):
         message = await ctx.send(embed=embedVar)
         await message.add_reaction("🇹")
         await message.add_reaction("🇫")
-        cursor.execute('''INSERT INTO pollscreated(unique_code, message, message_id, channel_id, option1, option2, type, active) VALUES(?,?,?,?,?,?,?,?)''', (customIdentifier, content, ctx.channel.last_message_id, ctx.channel.id, 0, 0, "TrueFalse", 1))
+        cursor.execute('''INSERT INTO pollscreated(unique_code, message, message_id, channel_id, option6, option20, type, active) VALUES(?,?,?,?,?,?,?,?)''', (customIdentifier, content, ctx.channel.last_message_id, ctx.channel.id, 0, 0, "TrueFalse", 1))
         dbconnect.commit()
         dbconnect.close()
 
@@ -447,6 +523,7 @@ class Poll(commands.Cog):
                 embedVar.add_field(name="Option {0}:".format(alphabetReactions[itemCount-1]), value="{0}".format(i), inline=True)
             itemCount += 1
         embedVar.add_field(name="Called By:", value="**{0}**".format(ctx.author.mention), inline=True)
+        embedVar.set_footer(text="Unique ID: {0}".format(customIdentifier))
         message = await ctx.send(embed=embedVar)
         itemCount = 0
         for i in splitMessage:
@@ -461,11 +538,69 @@ class Poll(commands.Cog):
 
 
     @client.command()
+    @commands.has_permissions(manage_channels=True)
     async def endpoll(self, ctx, identifier):
         dbconnect = sqlite3.connect('users.db')
         cursor = dbconnect.cursor()
-        pollStats = cursor.execute("SELECT message, message_id, channel_id, type, active FROM pollscreated WHERE unique_code = ?", [identifier]).fetchall()
-        print(pollStats)
+        pollActive = cursor.execute("SELECT active FROM pollscreated WHERE unique_code = ?", [identifier]).fetchone()
+        if pollActive:
+            if str(pollActive) == "(1,)":
+                pollType = cursor.execute("SELECT type FROM pollscreated WHERE unique_code = ?",
+                                            [identifier]).fetchone()
+                if str(pollType) == "('Rating',)":
+                    pollMessage = cursor.execute("SELECT message FROM pollscreated WHERE unique_code = ?",
+                                            [identifier]).fetchone()
+                    pollMessage = str(pollMessage).split("'")
+                    pollOptionCounts = cursor.execute("SELECT option1, option2, option3, option4, option5, option6, option7, option8, option9, option10 FROM pollscreated WHERE unique_code = ?",[identifier]).fetchone()
+                    pollOptionCounts = str(pollOptionCounts).split("(")
+                    pollOptionCounts = str(pollOptionCounts[1]).split(")")
+                    pollOptionCounts = str(pollOptionCounts[0]).split(",")
+                    winningVote = max(int(pollOptionCounts[0]), int(pollOptionCounts[1]), int(pollOptionCounts[2]), int(pollOptionCounts[3]), int(pollOptionCounts[4]), int(pollOptionCounts[5]), int(pollOptionCounts[6]), int(pollOptionCounts[7]), int(pollOptionCounts[8]), int(pollOptionCounts[9]))
+                    for i in range(10):
+                        testVote = int(pollOptionCounts[i])
+                        if testVote == winningVote:
+                            winningValue = alphabetReactions[i]
+                            await ctx.send("POLL RESULTS ARE IN: The most popular result for the rating of **{0}** was **{1}** with **{2}** votes".format(pollMessage[1], winningValue, winningVote))
+                if str(pollType) == "('TrueFalse',)":
+                    pollMessage = cursor.execute("SELECT message_id, channel_id FROM pollscreated WHERE unique_code = ?", [identifier]).fetchone()
+                    pollMessage = str(pollMessage).split("'")
+                    pollOptionCounts = cursor.execute(
+                        "SELECT option1, option2 FROM pollscreated WHERE unique_code = ?",
+                        [identifier]).fetchone()
+                    pollOptionCounts = str(pollOptionCounts).split("(")
+                    pollOptionCounts = str(pollOptionCounts[1]).split(")")
+                    pollOptionCounts = str(pollOptionCounts[0]).split(",")
+                    winningVote = max(int(pollOptionCounts[0]), int(pollOptionCounts[1]))
+                    for i in range(2):
+                        testVote = int(pollOptionCounts[i])
+                        if testVote == winningVote:
+                            winningValue = alphabetReactions[i]
+                            await ctx.send(
+                                "POLL RESULTS ARE IN: The most popular result for the true or false of **{0}** was **{1}** with **{2}** votes".format(
+                                    pollMessage[1], winningValue, winningVote))
+                if str(pollType) == "('Strawpoll',)":
+                    pollMessage = cursor.execute("SELECT message FROM pollscreated WHERE unique_code = ?",
+                                                 [identifier]).fetchone()
+                    pollMessage = str(pollMessage).split("'")
+                    pollMessage = pollMessage[1].split(";")
+                    pollOptionCounts = cursor.execute("SELECT option1, option2, option3, option4, option5, option6, option7, option8, option9, option10, option11, option12, option13, option14, option15, option16, option17, option18, option19, option20, option21, option22, option23, option24, option25 FROM pollscreated WHERE unique_code = ?",[identifier]).fetchone()
+                    pollOptionCounts = str(pollOptionCounts).split("(")
+                    pollOptionCounts = str(pollOptionCounts[1]).split(")")
+                    pollOptionCounts = str(pollOptionCounts[0]).split(",")
+                    winningVote = max(int(pollOptionCounts[0]), int(pollOptionCounts[1]), int(pollOptionCounts[2]), int(pollOptionCounts[3]), int(pollOptionCounts[4]), int(pollOptionCounts[5]), int(pollOptionCounts[6]), int(pollOptionCounts[7]), int(pollOptionCounts[8]), int(pollOptionCounts[9]), int(pollOptionCounts[10]), int(pollOptionCounts[11]), int(pollOptionCounts[12]), int(pollOptionCounts[13]), int(pollOptionCounts[14]), int(pollOptionCounts[15]), int(pollOptionCounts[16]), int(pollOptionCounts[17]), int(pollOptionCounts[18]), int(pollOptionCounts[19]), int(pollOptionCounts[20]), int(pollOptionCounts[21]), int(pollOptionCounts[22]), int(pollOptionCounts[23]), int(pollOptionCounts[24]))
+                    for i in range(25):
+                        testVote = int(pollOptionCounts[i])
+                        if testVote == winningVote:
+                            winningValue = alphabetReactions[i]
+                            await ctx.send(
+                                "POLL RESULTS ARE IN: The most popular result for the rating of **{0}** was **{1}** with **{2}** votes".format(
+                                    pollMessage[i+1], winningValue, winningVote))
+
+            else:
+                ctx.send("Poll is Inactive!")
+        cursor.execute("UPDATE pollscreated SET active = 0 WHERE unique_code = ?", [identifier])
+        dbconnect.commit()
+        dbconnect.close()
 
 def setup(client):
     client.add_cog(Poll(client))

@@ -25,12 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="New poll.py cog, allowing for quick strawpolls to be made on the fly, with full reaction arrays included.">
-      <change afterPath="$PROJECT_DIR$/Screenshot 2020-09-20 164647.png" afterDir="false" />
+    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="Poll.py now supports logging for the polls, utilising the database.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/announcement.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/announcement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/poll.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/poll.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -214,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600609816835</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Poll.py now supports logging for the polls, utilising the database.">
+      <created>1600626020394</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1600626020394</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -253,7 +257,8 @@
     <MESSAGE value="Updated moderation to effectively pass messages to moderation channels, removed wikipedia.py due to issue with not finding correct search results for it." />
     <MESSAGE value="Added new announcement.py cog, which allows people to prepare an announcement and then send it." />
     <MESSAGE value="New poll.py cog, allowing for quick strawpolls to be made on the fly, with full reaction arrays included." />
-    <option name="LAST_COMMIT_MESSAGE" value="New poll.py cog, allowing for quick strawpolls to be made on the fly, with full reaction arrays included." />
+    <MESSAGE value="Poll.py now supports logging for the polls, utilising the database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Poll.py now supports logging for the polls, utilising the database." />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1600620734149">
@@ -276,25 +281,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600368336301" />
-    <state width="1899" height="221" key="GridCell.Tab.0.bottom" timestamp="1600625464113">
+    <state width="1899" height="221" key="GridCell.Tab.0.bottom" timestamp="1600692016316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600625464113" />
+    <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600692016316" />
     <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.center" timestamp="1600625464113">
+    <state width="1899" height="221" key="GridCell.Tab.0.center" timestamp="1600692016315">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600625464113" />
+    <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600692016315" />
     <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.left" timestamp="1600625464113">
+    <state width="1899" height="221" key="GridCell.Tab.0.left" timestamp="1600692016315">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600625464113" />
+    <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600692016315" />
     <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.right" timestamp="1600625464113">
+    <state width="1899" height="221" key="GridCell.Tab.0.right" timestamp="1600692016315">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600625464113" />
+    <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600692016315" />
     <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1600501823199">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -312,14 +317,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600501823199" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1598096569019">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1600689860450">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1598096569019" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600609820106">
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600689860450" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600626021648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600609820106" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600626021648" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600412061213" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600450069784">
       <screen x="0" y="0" width="1920" height="1040" />
