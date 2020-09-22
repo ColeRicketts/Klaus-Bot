@@ -40,7 +40,6 @@ class Poll(commands.Cog):
                         if payload.emoji.name == '🇦':
                             initalTotal = cursor.execute("SELECT message_id, option1 FROM pollscreated WHERE message_id = ?", [message_id]).fetchall()
                             for row in initalTotal:
-                                print(row[1])
                                 total = row[1] + 1
                                 cursor.execute("UPDATE pollscreated SET option1 = ? WHERE message_id = ?", [total, message_id])
                         else:
@@ -593,7 +592,7 @@ class Poll(commands.Cog):
                         if testVote == winningVote:
                             winningValue = alphabetReactions[i]
                             await ctx.send(
-                                "POLL RESULTS ARE IN: The most popular result for the rating of **{0}** was **{1}** with **{2}** votes".format(
+                                "POLL RESULTS ARE IN: The most popular result for the poll of **{0}** was **{1}** with **{2}** votes".format(
                                     pollMessage[0], pollMessage[i+1], winningVote))
 
             else:

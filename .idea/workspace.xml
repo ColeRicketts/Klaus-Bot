@@ -27,7 +27,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="Poll.py complete, with endpoll function serving to give the results of poll!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshot 2020-09-20 164647.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/afkchecker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/customwarning.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/levelling.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/levelling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/poll.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/poll.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colourCodes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/colourCodes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600713136948</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Poll.py complete, with endpoll function serving to give the results of poll!">
+      <created>1600713241835</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1600713241835</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -288,25 +301,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600368336301" />
-    <state width="1899" height="221" key="GridCell.Tab.0.bottom" timestamp="1600713168988">
+    <state width="1899" height="221" key="GridCell.Tab.0.bottom" timestamp="1600758929585">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600713168988" />
+    <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600758929585" />
     <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.center" timestamp="1600713168986">
+    <state width="1899" height="221" key="GridCell.Tab.0.center" timestamp="1600758929583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600713168986" />
+    <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600758929583" />
     <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.left" timestamp="1600713168986">
+    <state width="1899" height="221" key="GridCell.Tab.0.left" timestamp="1600758929583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600713168986" />
+    <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600758929583" />
     <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
-    <state width="1899" height="221" key="GridCell.Tab.0.right" timestamp="1600713168987">
+    <state width="1899" height="221" key="GridCell.Tab.0.right" timestamp="1600758929584">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600713168987" />
+    <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600758929584" />
     <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1598011036331" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1600501823199">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -328,10 +341,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600689860450" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600626021648">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600713247030">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600626021648" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600713247030" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600412061213" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600450069784">
       <screen x="0" y="0" width="1920" height="1040" />
