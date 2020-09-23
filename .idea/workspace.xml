@@ -25,16 +25,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="Completed levelling.py, which adds an XP based levelling system per message sent.">
+    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="Edited files, ready for release.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/automod.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/levelling.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/levelling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/music.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/music.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/reactionrole.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/voice.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/users.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +237,28 @@
       <option name="project" value="LOCAL" />
       <updated>1600759529668</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Edited README.md">
+      <created>1600862903880</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1600862903880</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Edited README.md">
+      <created>1600863407125</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1600863407125</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Edited files, ready for release.">
+      <created>1600863689890</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1600863689890</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -287,7 +300,9 @@
     <MESSAGE value="Poll.py now supports logging for the polls, utilising the database." />
     <MESSAGE value="Poll.py complete, with endpoll function serving to give the results of poll!" />
     <MESSAGE value="Completed levelling.py, which adds an XP based levelling system per message sent." />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed levelling.py, which adds an XP based levelling system per message sent." />
+    <MESSAGE value="Edited README.md" />
+    <MESSAGE value="Edited files, ready for release." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited files, ready for release." />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1600620734149">
@@ -310,26 +325,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600368336301" />
-    <state width="1899" height="54" key="GridCell.Tab.0.bottom" timestamp="1600862517980">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1899" height="54" key="GridCell.Tab.0.bottom" timestamp="1600864551020">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="54" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600862517980" />
-    <state width="1899" height="221" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600845740434" />
-    <state width="1899" height="54" key="GridCell.Tab.0.center" timestamp="1600862517980">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1899" height="54" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600864551020" />
+    <state width="1899" height="54" key="GridCell.Tab.0.center" timestamp="1600864551020">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="54" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600862517980" />
-    <state width="1899" height="221" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600845740434" />
-    <state width="1899" height="54" key="GridCell.Tab.0.left" timestamp="1600862517980">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1899" height="54" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600864551020" />
+    <state width="1899" height="54" key="GridCell.Tab.0.left" timestamp="1600864551020">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="54" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600862517980" />
-    <state width="1899" height="221" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600845740434" />
-    <state width="1899" height="54" key="GridCell.Tab.0.right" timestamp="1600862517980">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1899" height="54" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600864551020" />
+    <state width="1899" height="54" key="GridCell.Tab.0.right" timestamp="1600864551020">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="54" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600862517980" />
-    <state width="1899" height="221" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600845740434" />
+    <state width="1899" height="54" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600864551020" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1600501823199">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -350,19 +365,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600689860450" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600784164210">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600863693571">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600784164210" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600412061213" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600863409048" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600863693571" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600784131968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600784131968" />
-    <state x="1912" y="-8" width="1590" height="717" maximized="true" key="dock-window-1" timestamp="1600458780182">
+    <state x="2170" y="-24" width="1379" height="912" maximized="true" key="dock-window-1" timestamp="1600863403659">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="1912" y="-8" width="1590" height="717" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600458780182" />
+    <state x="2170" y="-24" width="1379" height="912" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600863403659" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600612842143">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,3 +1,4 @@
+# Run this file to start the bot
 import os
 import json
 from discord.ext import commands
