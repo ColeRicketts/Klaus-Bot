@@ -10,7 +10,7 @@ with open('config.json') as configFile:
     for value in data["server_details"]:
         bot_id = value['bot_id']
 
-class Moderation(commands.Cog):
+class Levelling(commands.Cog):
     def __init__(self, client):
         self.client = client
 
@@ -68,16 +68,17 @@ class Moderation(commands.Cog):
     async def leaderboard(self, ctx):
         dbconnect = sqlite3.connect('users.db')
         cursor = dbconnect.cursor()
-        userData = cursor.execute("SELECT username, messages, level, experience FROM messagecounts").fetchmany(3)
+        userData = cursor.execute("SELECT * FROM messagecounts ORDER BY experience DESC LIMIT 3").fetchall()
         embedVar = discord.Embed(title="LEADERBOARD:", description="Top 3 members in the guild!", color=0xf1c40f)
         for item in userData:
             userLevel = item[2]
             userExperience = item[3]
             userMessages = item[1]
-            embedVar.add_field(name="User:", value="**{0}**: {1} experience, {2} levels, {3} messages!".format(ctx.message.author.mention, userExperience, userLevel, userMessages), inline=False)
+            userName = item[0]
+            embedVar.add_field(name="User:", value="**{0}**: {1} experience, {2} levels, {3} messages!".format(userName, userExperience, userLevel, userMessages), inline=False)
         await ctx.send(embed=embedVar)
         dbconnect.commit()
         dbconnect.close()
 
 def setup(client):
-    client.add_cog(Moderation(client))
+    client.add_cog(Levelling(client))

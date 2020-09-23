@@ -1,2 +1,4 @@
 git+https://github.com/Rapptz/discord.py
+git+https://github.com/ytdl-org/youtube-dl
+git+https://github.com/joetats/youtube_search
 discord~=1.0.1
