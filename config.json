@@ -1,15 +1,15 @@
 {
   "server_details": [
     {
-      "bot_token": "NjkyMDEwNDY4NzEzNDMxMDUw.XnoS-A.KCL0m2gsOpFE1f7Ud4oYIbD-sRY",
-      "guild_id": "689899375123759107",
-      "bot_id": "692010468713431050",
-      "warnings_id": "756593069561872484",
-      "reports_id": "756593105502732350",
-      "automod_id": "756593125346115706",
-      "modaction_id": "756789003407327345",
-      "announcements_id": "756848076009767185",
-      "welcome_id": "757865537941274656"
+      "bot_token": "insert Discord bot developer token here",
+      "guild_id": "insert ID of the server",
+      "bot_id": "insert ID of the bot user",
+      "warnings_id": "insert ID of channel to send warnings to",
+      "reports_id": "insert ID of channel to send reports to",
+      "automod_id": "insert ID of channel to send automoderator actions to",
+      "modaction_id": "insert ID of channel to send moderator actions to",
+      "announcements_id": "insert ID of channel to send announcements to",
+      "welcome_id": "insert ID of channel to send welcomes to"
     }
   ]
 }
