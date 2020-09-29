@@ -27,6 +27,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="Edited files, ready for release.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/announcement.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/announcement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cogs/automessage.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/automessage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -8,16 +8,17 @@ with open('config.json') as configFile:
     for value in data["server_details"]:
         announce_id = value['announcements_id']
 
+
 class Announcement(commands.Cog):
-    def __init__(self, client):
-        self.client = client
+    def __init__(self, clientValue):
+        self.client = clientValue
 
     @commands.Cog.listener()
     async def on_ready(self):
         print('Announcement Online!')
 
     @client.command()
-    @commands.has_permissions(manage_channels= True)
+    @commands.has_permissions(manage_channels=True)
     async def announcetitle(self, ctx, *, title):
         global annctitle
         annctitle = title
@@ -34,22 +35,25 @@ class Announcement(commands.Cog):
     @commands.has_permissions(manage_channels=True)
     async def announce(self):
         channel = self.client.get_channel(int(announce_id))
-        embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage), color=0xe91e63)
+        embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage),
+                                 color=0xe91e63)
         await channel.send(embed=embedVar)
 
     @client.command()
     @commands.has_permissions(manage_channels=True)
     async def serverannounce(self, ctx):
         for channel in ctx.guild.text_channels:
-            embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage), color=0xe91e63)
+            embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage),
+                                     color=0xe91e63)
             await channel.send(embed=embedVar)
 
     @client.command()
     @commands.has_permissions(manage_channels=True)
     async def previewannounce(self, ctx):
-        embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage), colour=0xe91e63)
+        embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage),
+                                 colour=0xe91e63)
         await ctx.send(embed=embedVar)
 
 
-def setup(client):
-    client.add_cog(Announcement(client))
+def setup(clientValue):
+    client.add_cog(Announcement(clientValue))

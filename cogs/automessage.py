@@ -9,9 +9,10 @@ with open('config.json') as configFile:
     for value in data["server_details"]:
         welcome_id = value['welcome_id']
 
+
 class Moderation(commands.Cog):
-    def __init__(self, client):
-        self.client = client
+    def __init__(self, clientValue):
+        self.client = clientValue
 
     @commands.Cog.listener()
     async def on_ready(self):
@@ -20,7 +21,8 @@ class Moderation(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         channel = self.client.get_channel(int(welcome_id))
-        embedVar = discord.Embed(title="USER JOINED:", description="User: **{0}**".format(member.mention), color=0x979c9f)
+        embedVar = discord.Embed(title="USER JOINED:", description="User: **{0}**".format(member.mention),
+                                 color=0x979c9f)
         embedVar.add_field(name="Time:", value="**{0}**".format(ctime()), inline=True)
         embedVar.set_footer(text="Welcome to the server!")
         await channel.send(embed=embedVar)
@@ -34,5 +36,6 @@ class Moderation(commands.Cog):
         embedVar.set_footer(text="Goodbye!")
         await channel.send(embed=embedVar)
 
-def setup(client):
-    client.add_cog(Moderation(client))
+
+def setup(clientValue):
+    client.add_cog(Moderation(clientValue))
