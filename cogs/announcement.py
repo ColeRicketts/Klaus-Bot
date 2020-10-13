@@ -55,5 +55,5 @@ class Announcement(commands.Cog):
         await ctx.send(embed=embedVar)
 
 
-def setup(clientValue):
-    client.add_cog(Announcement(clientValue))
+def setup(client):
+    client.add_cog(Announcement(client))

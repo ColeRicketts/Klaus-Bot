@@ -25,10 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="Edited files, ready for release.">
+    <list default="true" id="c919bd1e-5740-4abd-a9a8-888a7d7d6b53" name="Default Changelist" comment="PEP8 Compliance ensured project-wide.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cogs/announcement.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/announcement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cogs/automessage.py" beforeDir="false" afterPath="$PROJECT_DIR$/cogs/automessage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600863689890</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="PEP8 Compliance ensured project-wide.">
+      <created>1601408769590</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1601408769590</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -304,7 +311,8 @@
     <MESSAGE value="Completed levelling.py, which adds an XP based levelling system per message sent." />
     <MESSAGE value="Edited README.md" />
     <MESSAGE value="Edited files, ready for release." />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited files, ready for release." />
+    <MESSAGE value="PEP8 Compliance ensured project-wide." />
+    <option name="LAST_COMMIT_MESSAGE" value="PEP8 Compliance ensured project-wide." />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1600620734149">
@@ -323,29 +331,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="723" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600798488348" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1600368336301">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1602440040897">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600368336301" />
-    <state width="1899" height="54" key="GridCell.Tab.0.bottom" timestamp="1600864551020">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602440040897" />
+    <state width="1899" height="347" key="GridCell.Tab.0.bottom" timestamp="1602571413663">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="54" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600862517980" />
+    <state width="1899" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602571413663" />
     <state width="1899" height="54" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600864551020" />
-    <state width="1899" height="54" key="GridCell.Tab.0.center" timestamp="1600864551020">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="347" key="GridCell.Tab.0.center" timestamp="1602571413663">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="54" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600862517980" />
+    <state width="1899" height="347" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602571413663" />
     <state width="1899" height="54" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600864551020" />
-    <state width="1899" height="54" key="GridCell.Tab.0.left" timestamp="1600864551020">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="347" key="GridCell.Tab.0.left" timestamp="1602571413662">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="54" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600862517980" />
+    <state width="1899" height="347" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602571413662" />
     <state width="1899" height="54" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600864551020" />
-    <state width="1899" height="54" key="GridCell.Tab.0.right" timestamp="1600864551020">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="347" key="GridCell.Tab.0.right" timestamp="1602571413663">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="54" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600862517980" />
+    <state width="1899" height="347" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602571413663" />
     <state width="1899" height="54" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600864551020" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1600501823199">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -367,10 +375,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600689860450" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600863693571">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601408779326">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600863409048" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601408779326" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600863693571" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600784131968">
       <screen x="0" y="0" width="1920" height="1040" />
