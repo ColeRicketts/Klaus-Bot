@@ -1,7 +1,7 @@
 {
   "server_details": [
     {
-      "bot_token": "insert Discord bot developer token here",
+      "bot_token": "insert Discord bot token here",
       "guild_id": "insert ID of the server",
       "bot_id": "insert ID of the bot user",
       "warnings_id": "insert ID of channel to send warnings to",
