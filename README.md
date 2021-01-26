@@ -1,4 +1,4 @@
-# Klaus - Friendly Bot
+# Klaus - Multipurpose Bot
 This is a Discord bot designed in Python using the [discord.py] library. It is intended for use in smaller servers and to be selfhosted by the owners/admins, if you are looking for alternatives to lots of the features locked behind 'Premium' on other bots.
 
 The bot contains all basic moderation features, announcements, automoderator, levelling, polling, automessages and a music feature (WIP)
