@@ -33,7 +33,7 @@ class Announcement(commands.Cog):
 
     @client.command()
     @commands.has_permissions(manage_channels=True)
-    async def announce(self):
+    async def announce(self, ctx):
         channel = self.client.get_channel(int(announce_id))
         embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage),
                                  color=0xe91e63)
