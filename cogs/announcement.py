@@ -35,7 +35,7 @@ class Announcement(commands.Cog):
     @commands.has_permissions(manage_channels=True)
     async def announce(self, ctx):
         channel = self.client.get_channel(int(announce_id))
-        embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage),
+        embedVar = discord.Embed(title=f"**{annctitle}**", description=f"{anncmessage}",
                                  color=0xe91e63)
         await channel.send(embed=embedVar)
 
@@ -43,14 +43,14 @@ class Announcement(commands.Cog):
     @commands.has_permissions(manage_channels=True)
     async def serverannounce(self, ctx):
         for channel in ctx.guild.text_channels:
-            embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage),
+            embedVar = discord.Embed(title=f"**{annctitle}**", description=f"{anncmessage}",
                                      color=0xe91e63)
             await channel.send(embed=embedVar)
 
     @client.command()
     @commands.has_permissions(manage_channels=True)
     async def previewannounce(self, ctx):
-        embedVar = discord.Embed(title="**{0}**".format(annctitle), description="{0}".format(anncmessage),
+        embedVar = discord.Embed(title=f"**{annctitle}**", description=f"{anncmessage}",
                                  colour=0xe91e63)
         await ctx.send(embed=embedVar)
 
