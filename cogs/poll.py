@@ -469,9 +469,9 @@ class Poll(commands.Cog):
             if str(field) == testIdentifier:
                 customIdentifier = randint(1, 999999999999)
                 testIdentifier = "(" + str(customIdentifier) + ",)"
-        embedVar = discord.Embed(title="Rate: **{0}**".format(content), description="Give this a rating from 1 to 10! A-J is equal to 1-10!", color=0x9b59b6)
-        embedVar.add_field(name="Called By:", value="**{0}**".format(ctx.author.mention), inline=False)
-        embedVar.set_footer(text="Unique ID: {0}".format(customIdentifier))
+        embedVar = discord.Embed(title=f"Rate: **{content}**", description="Give this a rating from 1 to 10! A-J is equal to 1-10!", color=0x9b59b6)
+        embedVar.add_field(name="Called By:", value=f"**{ctx.author.mention}**", inline=False)
+        embedVar.set_footer(text=f"Unique ID: {customIdentifier}")
         message = await ctx.send(embed=embedVar)
         for i in range(10):
             await message.add_reaction(alphabetReactions[i])
@@ -490,9 +490,9 @@ class Poll(commands.Cog):
             if str(field) == testIdentifier:
                 customIdentifier = randint(1, 999999999999)
                 testIdentifier = "(" + str(customIdentifier) + ",)"
-        embedVar = discord.Embed(title="T or F: **{0}**".format(content), description="Is it true or false?", color=0x9b59b6)
-        embedVar.add_field(name="Called By:", value="**{0}**".format(ctx.author.mention), inline=False)
-        embedVar.set_footer(text="Unique ID: {0}".format(customIdentifier))
+        embedVar = discord.Embed(title=f"T or F: **{content}**", description="Is it true or false?", color=0x9b59b6)
+        embedVar.add_field(name="Called By:", value=f"**{ctx.author.mention}**", inline=False)
+        embedVar.set_footer(text=f"Unique ID: {customIdentifier}")
         message = await ctx.send(embed=embedVar)
         await message.add_reaction("🇹")
         await message.add_reaction("🇫")
@@ -514,15 +514,15 @@ class Poll(commands.Cog):
         itemCount = 0
         splitMessage = content.split(";")
         pollTitle = splitMessage[0]
-        embedVar = discord.Embed(title="Pick: **{0}**".format(pollTitle), description="Pick an option!", color=0x9b59b6)
+        embedVar = discord.Embed(title=f"Pick: **{pollTitle}**", description="Pick an option!", color=0x9b59b6)
         for i in splitMessage:
             if i == pollTitle:
                 pass
             else:
-                embedVar.add_field(name="Option {0}:".format(alphabetReactions[itemCount-1]), value="{0}".format(i), inline=True)
+                embedVar.add_field(name=f"Option {alphabetReactions[itemCount-1]}:", value=f"{i}", inline=True)
             itemCount += 1
-        embedVar.add_field(name="Called By:", value="**{0}**".format(ctx.author.mention), inline=True)
-        embedVar.set_footer(text="Unique ID: {0}".format(customIdentifier))
+        embedVar.add_field(name="Called By:", value=f"**{ctx.author.mention}**", inline=True)
+        embedVar.set_footer(text=f"Unique ID: {customIdentifier}")
         message = await ctx.send(embed=embedVar)
         itemCount = 0
         for i in splitMessage:
@@ -559,7 +559,7 @@ class Poll(commands.Cog):
                         testVote = int(pollOptionCounts[i])
                         if testVote == winningVote:
                             winningValue = alphabetReactions[i]
-                            await ctx.send("POLL RESULTS ARE IN: The most popular result for the rating of **{0}** was **{1}** with **{2}** votes".format(pollMessage[1], winningValue, winningVote))
+                            await ctx.send(f"POLL RESULTS ARE IN: The most popular result for the rating of **{pollMessage[1]}** was **{winningValue}** with **{winningVote}** votes")
                 if str(pollType) == "('TrueFalse',)":
                     pollMessage = cursor.execute("SELECT message_id, channel_id FROM pollscreated WHERE unique_code = ?", [identifier]).fetchone()
                     pollMessage = str(pollMessage).split("'")
@@ -575,8 +575,7 @@ class Poll(commands.Cog):
                         if testVote == winningVote:
                             winningValue = alphabetReactions[i]
                             await ctx.send(
-                                "POLL RESULTS ARE IN: The most popular result for the true or false of **{0}** was **{1}** with **{2}** votes".format(
-                                    pollMessage[1], winningValue, winningVote))
+                                f"POLL RESULTS ARE IN: The most popular result for the true or false of **{pollMessage[1]}** was **{winningValue}** with **{winningVote}** votes")
                 if str(pollType) == "('Strawpoll',)":
                     pollMessage = cursor.execute("SELECT message FROM pollscreated WHERE unique_code = ?",
                                                  [identifier]).fetchone()
@@ -592,8 +591,7 @@ class Poll(commands.Cog):
                         if testVote == winningVote:
                             winningValue = alphabetReactions[i]
                             await ctx.send(
-                                "POLL RESULTS ARE IN: The most popular result for the poll of **{0}** was **{1}** with **{2}** votes".format(
-                                    pollMessage[0], pollMessage[i+1], winningVote))
+                                f"POLL RESULTS ARE IN: The most popular result for the poll of **{pollMessage[0]}** was **{pollMessage[i+1]}** with **{winningVote}** votes")
 
             else:
                 ctx.send("Poll is Inactive!")
