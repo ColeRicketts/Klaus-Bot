@@ -151,7 +151,7 @@ class Moderation(commands.Cog):
         if result:
             cursor.execute("DELETE FROM warnings WHERE username = ?", [str(member)])
             channel = self.client.get_channel(int(mod_id))
-            embedVar = discord.Embed(title="WARNINGS CLEARED", description=f"Issued by **{ctx.message.author}**".format, color=0xe67e22)
+            embedVar = discord.Embed(title="WARNINGS CLEARED", description=f"Issued by **{ctx.message.author}**", color=0xe67e22)
             embedVar.add_field(name="User:", value=f"**{member.mention}**", inline=True)
             embedVar.add_field(name="Channel:", value=f"**{ctx.channel.mention}**", inline=True)
             embedVar.add_field(name="Time:", value=f"**{ctime()}**", inline=True)
