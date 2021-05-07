@@ -58,10 +58,10 @@ class Levelling(commands.Cog):
             userExperience = item[3]
             userMessages = item[1]
             userName = item[0]
-            embedVar = discord.Embed(title="LEVEL:", description="For: **{0}**".format(userName), color=0xf1c40f)
-            embedVar.add_field(name="Messages:", value="**{0}**".format(userMessages), inline=True)
-            embedVar.add_field(name="Experience:", value="**{0}**".format(userExperience), inline=True)
-            embedVar.add_field(name="Level:", value="**{0}**".format(userLevel), inline=True)
+            embedVar = discord.Embed(title="LEVEL:", description=f"For: **{userName}**", color=0xf1c40f)
+            embedVar.add_field(name="Messages:", value=f"**{userMessages}**", inline=True)
+            embedVar.add_field(name="Experience:", value=f"**{userExperience}**", inline=True)
+            embedVar.add_field(name="Level:", value=f"**{userLevel}**", inline=True)
             await ctx.send(embed=embedVar)
 
     @client.command()
@@ -75,7 +75,7 @@ class Levelling(commands.Cog):
             userExperience = item[3]
             userMessages = item[1]
             userName = item[0]
-            embedVar.add_field(name="User:", value="**{0}**: {1} experience, {2} levels, {3} messages!".format(userName, userExperience, userLevel, userMessages), inline=False)
+            embedVar.add_field(name="User:", value=f"**{userName}**: {userExperience} experience, {userLevel} levels, {userMessages} messages!", inline=False)
         await ctx.send(embed=embedVar)
         dbconnect.commit()
         dbconnect.close()
