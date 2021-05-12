@@ -67,4 +67,6 @@ WORK IN PROGRESS:
 2) Run **discordbot.py** to start the bot and it should connect to the server, no other Python config needed.
 3) Enjoy the use of the bot and feel free to raise any issues in GitHub.
 
-   [discord.py]: <https://github.com/Rapptz/discord.py>
+# Credits
+
+Special thanks to Aethese for their contributions!
