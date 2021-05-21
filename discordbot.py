@@ -27,19 +27,26 @@ async def on_command_error(ctx, error):
 
 @client.command()
 @commands.has_permissions()
-async def load(extension):
+async def load(ctx, extension):
     client.load_extension(f'cogs.{extension}')
-
-
+    embed = discord.Embed(description=f'Loaded Extension {extension}')
+    await ctx.send(embed=embed)
+    print(f'Loaded Extention {extension}')
+    
 @client.command()
-async def unload(extension):
+async def unload(ctx, extension):
     client.unload_extension(f'cogs.{extension}')
-
+    embed = discord.Embed(description=f'Unloaded Extension {extension}')
+    await ctx.send(embed=embed)
+    print(f'Unloaded Extention {extension}')
 
 @client.command()
 async def reload(extension):
     client.unload_extension(f'cogs.{extension}')
     client.load_extension(f'cogs.{extension}')
+    embed = discord.Embed(description=f'Reloaded Extension {extension}')
+    await ctx.send(embed=embed)
+    print(f'Reloaded Extention {extension}')
 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):
