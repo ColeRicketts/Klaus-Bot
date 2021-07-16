@@ -69,4 +69,4 @@ WORK IN PROGRESS:
 
 # Credits
 
-Special thanks to Aethese for their contributions!
+Special thanks to Aethese, Spaxly, Wurgo and Neil Shah for their contributions!
