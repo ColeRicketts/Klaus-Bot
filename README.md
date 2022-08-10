@@ -3,8 +3,6 @@ This is a Discord bot designed in Python using the [discord.py] library. It is i
 
 The bot contains all basic moderation features, announcements, automoderator, levelling, polling, automessages and a music feature (WIP)
 
-# SEE WIKI FOR COMMANDS #
-
 # Installation
 ### Prerequisites
 1) Look in **requirements.txt** for the required packages and links to them on GitHub. Install these via command line.
