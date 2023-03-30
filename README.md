@@ -1,3 +1,4 @@
+# Since being inactive for over a year, I have made the decision to archive this project (30th March 2023). Thank you to all.
 # Klaus - Multipurpose Bot
 This is a Discord bot designed in Python using the [discord.py] library. It is intended for use in smaller servers and to be selfhosted by the owners/admins, if you are looking for alternatives to lots of the features locked behind 'Premium' on other bots.
 
